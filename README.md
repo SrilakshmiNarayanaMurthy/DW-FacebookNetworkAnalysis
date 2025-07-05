@@ -27,3 +27,6 @@ technologies and contemporary best practices.
 
 ![Screenshot (1472)](https://github.com/user-attachments/assets/85b315d8-f1e6-4d8e-8981-45d261562e9c)
 
+![Screenshot (1474)](https://github.com/user-attachments/assets/6690d63b-cca0-4c41-be15-4d4dc4f7ca2c)
+
+
