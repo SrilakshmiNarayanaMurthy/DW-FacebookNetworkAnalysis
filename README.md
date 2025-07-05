@@ -31,13 +31,7 @@ MERGE (u:user2 {id: toInteger(row.friend_id)})
 MERGE (c:Circle {name: row.circle_name, owner: 107}) 
 MERGE (u)-[:IN_CIRCLE]->(c) 
 
-Creating Features 
-QUERY 
-LOAD CSV WITH HEADERS FROM 
-'https://raw.githubusercontent.com/ArpanaSinghSJSU/DataWarehouse/refs/head
- s/main/107.featnames_csvI.csv' AS row 
-WITH DISTINCT row.feature_num AS featnum, row.feat_name AS featname 
-MERGE (:Feature {number: featnum, name: featname}) 
+<pre> ```cypher LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/ArpanaSinghSJSU/DataWarehouse/refs/heads/main/107.featnames_csvI.csv' AS row WITH DISTINCT row.feature_num AS featnum, row.feat_name AS featname MERGE (:Feature {number: featnum, name: featname}) ``` </pre>
 
 
 ![Screenshot (1472)](https://github.com/user-attachments/assets/85b315d8-f1e6-4d8e-8981-45d261562e9c)
