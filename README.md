@@ -19,3 +19,22 @@ learning environment that:
 By achieving these objectives, we demonstrate a comprehensive data engineering and analytics 
 pipeline that transitions from raw data to insights, constructed entirely with open-source 
 technologies and contemporary best practices. 
+
+
+Creating circles and edges with cypher 
+QUERY 
+LOAD CSV WITH HEADERS FROM 
+'https://raw.githubusercontent.com/ArpanaSinghSJSU/DataWarehouse/refs/head
+ s/main/facebook_107circles_reformatted.csv' AS row 
+MERGE (ego:user1 {id: 107}) 
+MERGE (u:user2 {id: toInteger(row.friend_id)}) 
+MERGE (c:Circle {name: row.circle_name, owner: 107}) 
+MERGE (u)-[:IN_CIRCLE]->(c) 
+
+Creating Features 
+QUERY 
+LOAD CSV WITH HEADERS FROM 
+'https://raw.githubusercontent.com/ArpanaSinghSJSU/DataWarehouse/refs/head
+ s/main/107.featnames_csvI.csv' AS row 
+WITH DISTINCT row.feature_num AS featnum, row.feat_name AS featname 
+MERGE (:Feature {number: featnum, name: featname}) 
