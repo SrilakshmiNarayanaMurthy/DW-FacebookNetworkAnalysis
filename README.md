@@ -38,3 +38,7 @@ LOAD CSV WITH HEADERS FROM
  s/main/107.featnames_csvI.csv' AS row 
 WITH DISTINCT row.feature_num AS featnum, row.feat_name AS featname 
 MERGE (:Feature {number: featnum, name: featname}) 
+
+
+![Screenshot (1472)](https://github.com/user-attachments/assets/85b315d8-f1e6-4d8e-8981-45d261562e9c)
+
